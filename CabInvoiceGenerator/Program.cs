@@ -9,9 +9,9 @@ public class Programm
     {
 
         Console.WriteLine("welcome to cab invoice generator..");
-        InvoiceGenerator invoicegenerator = new InvoiceGenerator(RideType.Normal);
+      /*  InvoiceGenerator invoicegenerator = new InvoiceGenerator(RideType.Normal);
         double fare = invoicegenerator.CalculateFare(2.0,5);
-        Console.WriteLine($"Fair: {fare}");
+        Console.WriteLine($"Fair: {fare}");*/
 
 
 
