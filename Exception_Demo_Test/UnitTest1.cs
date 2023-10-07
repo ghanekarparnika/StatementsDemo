@@ -76,6 +76,38 @@ namespace Exception_Demo_Test
             Assert.AreEqual(expected, actual);
             Console.WriteLine(actual);
         }
+        //TC4.1
+        [TestMethod]
+        public void ReturnObjectByUsingReflection()
+        {
+            //Arrange
+            Object expected =new MoodAnalyser();
+           
+            //Act
+            Object createdobj = MoodAnalyserFactory.CreateMoodAnalyserObject("Exception_Demo.MoodAnalyser", "MoodAnalyser");
+   
+            //Assert
+           expected.Equals(createdobj);
+            
+        }
+
+        //TC4.2
+        [TestMethod]
+        public void GivenImproperClassNameShouldThrowMoodAnalyserException()
+        {
+            //Arrange
+            Object expected = new MoodAnalyser();
+
+            //Act
+            Object createdobj = MoodAnalyserFactory.CreateMoodAnalyserObject("Exception_Dem.MoodAnalyser", "MoodAnalyser");
+
+            //Assert
+            expected.Equals(createdobj);
+            Console.WriteLine(createdobj.ToString());
+
+        }
+
+
 
 
     }
