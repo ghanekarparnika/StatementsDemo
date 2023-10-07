@@ -9,16 +9,24 @@ namespace Exception_Demo
     public class MoodAnalyser
     {
 
-        public string analyseMood(string message)
+        private string message;
+
+        public MoodAnalyser() { }
+        public MoodAnalyser(string message) 
+        {
+            this.message = message;
+        }
+
+        public string analyseMood()
         {
             
-           if (message.Contains("sad"))
+           if (this.message.Contains("sad"))
             {
                 return "SAD";
             }
             else 
             {
-                return "HAPPY";
+                return "Not in any mood";
             }
                 
                   
