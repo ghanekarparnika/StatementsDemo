@@ -7,32 +7,35 @@ namespace Exception_Demo_Test
     {
 
         //tc1.1
+        //refactor1-tc1.1
         [TestMethod]
         public void GivenSadMoodreturnSAD()
         {
             //Arrange
             string expected = "SAD";
             string message = "I am in sad mood";
-            MoodAnalyser mood = new MoodAnalyser(); 
+            MoodAnalyser mood = new MoodAnalyser(message); 
             //Act
-            string actual = mood.analyseMood(message);
+            string actual = mood.analyseMood();
             //Assert
             Assert.AreEqual(expected, actual);
         }
 
         //tc1.2
+        //refactor1-tc1.2
         [TestMethod]
         public void GivenAnyMoodreturnHAPPY()
         {
             //Arrange
             string expected = "HAPPY";
             string message = "I am in any mood";
-            MoodAnalyser mood = new MoodAnalyser();
+            MoodAnalyser mood = new MoodAnalyser(message);
             //Act
-            string actual = mood.analyseMood(message);
+            string actual = mood.analyseMood();
             //Assert
             Assert.AreEqual(expected, actual);
         }
 
+        
     }
 }

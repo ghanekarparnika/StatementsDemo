@@ -26,7 +26,7 @@ namespace Exception_Demo
             }
             else 
             {
-                return "Not in any mood";
+                return "HAPPY";
             }
                 
                   
