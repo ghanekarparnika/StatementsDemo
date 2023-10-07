@@ -19,20 +19,30 @@ namespace Exception_Demo
 
         public string analyseMood()
         {
-            
-           if (this.message.Contains("sad"))
+            try
             {
-                return "SAD";
-            }
-            else 
+                if (this.message.Contains("sad"))
+                {
+                    return "SAD";
+
+                }
+                else
+                {
+                    return "HAPPY";
+                }
+
+
+         
+            }catch (Exception ex) 
             {
                 return "HAPPY";
             }
-                
-                  
-                
-               
-           
+
+
+
+
+
+
         }
     }
 }

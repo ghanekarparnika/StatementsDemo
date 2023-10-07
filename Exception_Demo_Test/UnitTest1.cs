@@ -36,6 +36,20 @@ namespace Exception_Demo_Test
             Assert.AreEqual(expected, actual);
         }
 
-        
+        //tc-2.1
+        [TestMethod]
+        public void GivenNullMoodreturnHAPPY()
+        {
+            //Arrange
+            string expected = "HAPPY";
+            string message = null;
+            MoodAnalyser mood = new MoodAnalyser(message);
+            //Act
+            string actual = mood.analyseMood();
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+
     }
 }
