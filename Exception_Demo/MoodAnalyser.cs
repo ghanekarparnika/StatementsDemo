@@ -20,20 +20,24 @@ namespace Exception_Demo
         public string analyseMood()
         {
             try
-            {
+            { 
+            
+                if(this.message.Equals(null))
+                {
+                    throw new MoodAnalys_Exception(MoodAnalys_Exception.ExceptionType.NULL_MESSAGE,"Message should not be null");
+                }
+
                 if (this.message.Contains("sad"))
-                {
-                    return "SAD";
+                    {
+                        return "SAD";
 
-                }
-                else
-                {
-                    return "HAPPY";
-                }
-
-
-         
-            }catch (Exception ex) 
+                    }
+                    else
+                    {
+                        return "HAPPY";
+                    }
+               
+             }catch (Exception ex) 
             {
                 return "HAPPY";
             }
