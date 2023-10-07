@@ -10,7 +10,7 @@ namespace Exception_Demo
     {
       public enum ExceptionType
         {
-            NULL_MESSAGE,EMPTY_MESSAGE,NO_SUCHCLASS
+            NULL_MESSAGE,EMPTY_MESSAGE,NO_SUCH_CLASS,NO_FOUND_CONSTRUCTOR
         }
 
         public ExceptionType type;

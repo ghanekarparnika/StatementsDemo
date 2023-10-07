@@ -16,11 +16,15 @@ namespace Exception_Demo
         {
             try
             {
-                string classname = "Exception_Demo.Mood_Analyser";
-                string constructorname = "Mood_Analyser";
+                string classname = "Exception_Demo.MoodAnalyser";
+                string constructorname = "MoodAnalyser";
                 if (classname != className)
                 {
-                    throw new MoodAnalys_Exception(MoodAnalys_Exception.ExceptionType.NO_SUCHCLASS, "no class found");
+                    throw new MoodAnalys_Exception(MoodAnalys_Exception.ExceptionType.NO_SUCH_CLASS, "no class found");
+                }
+                if (constructorname != constructor)
+                {
+                    throw new MoodAnalys_Exception(MoodAnalys_Exception.ExceptionType.NO_FOUND_CONSTRUCTOR, "No such method");
                 }
                 Assembly assembly = Assembly.GetExecutingAssembly();
                 Type moodAnalyserType = assembly.GetType(className);

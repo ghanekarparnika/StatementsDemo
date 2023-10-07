@@ -107,6 +107,22 @@ namespace Exception_Demo_Test
 
         }
 
+        //TC4.3
+        [TestMethod]
+        public void GivenImproperConstructorNameShouldThrowMoodAnalyserException()
+        {
+            //Arrange
+            Object expected = new MoodAnalyser();
+
+            //Act
+            Object createdobj = MoodAnalyserFactory.CreateMoodAnalyserObject("Exception_Demo.MoodAnalyser", "MooodAnalyser");
+
+            //Assert
+            expected.Equals(createdobj);
+            Console.WriteLine(createdobj.ToString());
+
+        }
+
 
 
 
