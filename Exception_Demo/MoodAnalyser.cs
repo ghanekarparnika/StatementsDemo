@@ -27,6 +27,11 @@ namespace Exception_Demo
                     throw new MoodAnalys_Exception(MoodAnalys_Exception.ExceptionType.NULL_MESSAGE,"Message should not be null");
                 }
 
+                if(this.message.Equals(" "))
+                {
+                    throw new MoodAnalys_Exception(MoodAnalys_Exception.ExceptionType.EMPTY_MESSAGE, "message should not be empty");
+                }
+
                 if (this.message.Contains("sad"))
                     {
                         return "SAD";
@@ -37,9 +42,9 @@ namespace Exception_Demo
                         return "HAPPY";
                     }
                
-             }catch (Exception ex) 
+             }catch (MoodAnalys_Exception ex) 
             {
-                return "HAPPY";
+                return ex.Message;
             }
 
 

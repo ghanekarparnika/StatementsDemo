@@ -62,6 +62,20 @@ namespace Exception_Demo_Test
             //Assert
             Assert.AreEqual(expected, actual);
         }
+        //TC3.2
+        [TestMethod]
+        public void GivenEmptyMoodShouldThrowMoodAnalyseException()
+        {
+            //Arrange
+            string expected = "message should not be empty";
+            string message =" ";
+            MoodAnalyser mood = new MoodAnalyser(message);
+            //Act
+            string actual = mood.analyseMood();
+            //Assert
+            Assert.AreEqual(expected, actual);
+            Console.WriteLine(actual);
+        }
 
 
     }
