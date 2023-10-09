@@ -8,7 +8,7 @@ namespace Exception_Demo
 {
     public class MoodAnalys_Exception : Exception
     {
-      public enum ExceptionType
+        public enum ExceptionType 
         {
             NULL_MESSAGE,EMPTY_MESSAGE,NO_SUCH_CLASS,NO_FOUND_CONSTRUCTOR
         }

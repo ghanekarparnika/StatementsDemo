@@ -1,4 +1,5 @@
 using Exception_Demo;
+using Microsoft.VisualStudio.TestPlatform.Utilities;
 
 namespace Exception_Demo_Test
 {
@@ -186,6 +187,27 @@ namespace Exception_Demo_Test
             Type typeofcreatedobj = createdobj.GetType();
             Console.WriteLine(typeofcreatedobj);
             Console.WriteLine(createdobj.ToString());
+
+
+        }
+
+        //TC6.1
+        [TestMethod]
+        public void Invoke_Method_Using_Reflection()
+        {
+            //Arrange
+            string message = "I am in any mood";
+            string expected = "HAPPY";
+
+            //Act
+            //Passing wrong name
+          
+                string output = MoodAnalyserFactory.InvokeMethodWithReflection("Exception_Demo.MoodAnalyser",message);
+
+                //Assert
+                Assert.AreEqual(expected, output);
+            Console.WriteLine(output);
+          
 
 
         }
