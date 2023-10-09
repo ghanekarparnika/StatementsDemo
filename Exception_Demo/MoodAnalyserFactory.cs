@@ -47,7 +47,13 @@ namespace Exception_Demo
         {
             try
             {
-               
+                string classname = "Exception_Demo.MoodAnalyser";
+                string constructorname = "MoodAnalyser(message)";
+                if (classname != className)
+                {
+                    throw new MoodAnalys_Exception(MoodAnalys_Exception.ExceptionType.NO_SUCH_CLASS, "no class found");
+                }
+
                 Assembly assembly = Assembly.GetExecutingAssembly();
                 Type moodAnalyserType = assembly.GetType(className);
                 return Activator.CreateInstance(moodAnalyserType);

@@ -146,6 +146,27 @@ namespace Exception_Demo_Test
 */
         }
 
+        //TC5.2
+        [TestMethod]
+        public void ImproperClassNameShouldThrowExceptionParameterizedConstructor()
+        {
+            //Arrange
+            string message = "I am in any mood";
+            Object expected = new MoodAnalyser(message);
+
+            //Act
+            //Passing wrong name
+            Object createdobj = MoodAnalyserFactory.CreateMoodAnalyserObjectWithParameterizedConstructor("Exception_Demoo.MoodAnalyser", "MoodAnalyser(message)");
+
+            //Assert
+            expected.Equals(createdobj);
+
+            Type typeofcreatedobj = createdobj.GetType();
+            Console.WriteLine(typeofcreatedobj);
+            Console.WriteLine(createdobj.ToString());
+
+
+        }
 
 
 
