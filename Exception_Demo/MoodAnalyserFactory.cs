@@ -25,7 +25,7 @@ namespace Exception_Demo
                 }
                 if (constructorname != constructor)
                 {
-                    throw new MoodAnalys_Exception(MoodAnalys_Exception.ExceptionType.NO_FOUND_CONSTRUCTOR, "No such method");
+                    throw new MoodAnalys_Exception(MoodAnalys_Exception.ExceptionType.NO_FOUND_CONSTRUCTOR, "No such Constructor");
                 }
 
                 if (classname != className)
@@ -52,6 +52,11 @@ namespace Exception_Demo
                 if (classname != className)
                 {
                     throw new MoodAnalys_Exception(MoodAnalys_Exception.ExceptionType.NO_SUCH_CLASS, "no class found");
+                }
+
+                if (constructorname != constructor)
+                {
+                    throw new MoodAnalys_Exception(MoodAnalys_Exception.ExceptionType.NO_FOUND_CONSTRUCTOR, "No such Constructor");
                 }
 
                 Assembly assembly = Assembly.GetExecutingAssembly();
