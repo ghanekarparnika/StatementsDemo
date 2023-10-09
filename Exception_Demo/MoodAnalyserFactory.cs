@@ -18,6 +18,7 @@ namespace Exception_Demo
             {
                 string classname = "Exception_Demo.MoodAnalyser";
                 string constructorname = "MoodAnalyser";
+              
                 if (classname != className)
                 {
                     throw new MoodAnalys_Exception(MoodAnalys_Exception.ExceptionType.NO_SUCH_CLASS, "no class found");
@@ -25,6 +26,11 @@ namespace Exception_Demo
                 if (constructorname != constructor)
                 {
                     throw new MoodAnalys_Exception(MoodAnalys_Exception.ExceptionType.NO_FOUND_CONSTRUCTOR, "No such method");
+                }
+
+                if (classname != className)
+                {
+                    throw new MoodAnalys_Exception(MoodAnalys_Exception.ExceptionType.NO_SUCH_CLASS, "no class found");
                 }
                 Assembly assembly = Assembly.GetExecutingAssembly();
                 Type moodAnalyserType = assembly.GetType(className);
@@ -37,5 +43,24 @@ namespace Exception_Demo
 
            
         }
+        public static Object CreateMoodAnalyserObjectWithParameterizedConstructor(string className, string constructor)
+        {
+            try
+            {
+               
+                Assembly assembly = Assembly.GetExecutingAssembly();
+                Type moodAnalyserType = assembly.GetType(className);
+                return Activator.CreateInstance(moodAnalyserType);
+            }
+            catch (MoodAnalys_Exception e)
+            {
+                return e.Message;
+            }
+
+
+        }
+
+
+
     }
 }

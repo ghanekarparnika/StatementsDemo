@@ -123,6 +123,29 @@ namespace Exception_Demo_Test
 
         }
 
+        //TC5.1
+        [TestMethod]
+        public void ReturnObjectByUsingReflectionParameterizedConstructor()
+        {
+            //Arrange
+            string message = "I am in any mood";
+            Object expected = new MoodAnalyser(message);
+
+            //Act
+            Object createdobj = MoodAnalyserFactory.CreateMoodAnalyserObjectWithParameterizedConstructor("Exception_Demo.MoodAnalyser", "MoodAnalyser(message)");
+
+            //Assert
+            expected.Equals(createdobj);
+
+            Type typeofcreatedobj= createdobj.GetType();
+            Console.WriteLine(typeofcreatedobj);
+
+            /*Type type = Type.GetType("created");
+            type.ToString();
+            Console.WriteLine(type);
+*/
+        }
+
 
 
 
